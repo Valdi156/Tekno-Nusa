@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+@media (max-width: 768px) {
+  #logo-wrapper {
+    animation: scroll-left 20s linear infinite;
+  }
+  #logo-wrapper.paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+#case-container {
+  position: relative;
+  min-height: 24rem; 
+  overflow: hidden;
+}
+
+.case-item {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.case-item.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.case-item img {
+  width: 18rem; 
+  height: 18rem; 
+}
+
+@media (min-width: 768px) {
+  .case-item img {
+    width: 24rem; 
+    height: 24rem;
+  }
+}
+
+.tab-btn {
+  transition: all 0.3s ease-in-out;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem; 
+}
+
+@media (min-width: 640px) {
+  .tab-btn {
+    font-size: 1rem; 
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tab-btn {
+    font-size: 1.125rem; 
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.tab-btn:hover {
+  transform: scale(1.05);
+}
+
+#prevBtn, #nextBtn {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.hero-section {
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 70vh !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 65vh !important;
+  }
+}
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.scroll-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-zoom {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+.scroll-zoom.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+.scroll-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+.scroll-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-pop {
+  opacity: 0;
+  transform: scale(0.8) rotate(-2deg);
+  transition: opacity 0.7s ease-out 0.3s,
+  transform 0.7s cubic-bezier(.34,1.56,.64,1) 0.3s;
+}
+.scroll-pop.show {
+  opacity: 1;
+  transform: scale(1) rotate(0);
+}

@@ -1,0 +1,484 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/src/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>  
+    .love-btn {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .love-btn:hover {
+      transform: scale(1.1);
+    }
+    
+    .love-btn.loved {
+      color: #ef4444;
+    }
+    
+    .card-overlay {
+      background: linear-gradient(45deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.1) 100%);
+    }
+    
+    .portfolio-card {
+      transition: all 0.3s ease;
+    }
+    
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
+    }
+  </style>
+</head>
+<body class="bg-[#090A0A]">
+  <nav class="flex items-center justify-between px-6 md:px-20 py-4 h-20 sticky top-0 z-50 backdrop-blur-md text-white">
+    <div class="flex items-center gap-2">
+      <img src="/Logo.png" alt="" class="w-8 h-8">
+      <span class="font-bold text-lg font-space">Tekno Nusa</span>
+    </div>
+
+    <div class="hidden md:flex flex-1 justify-center gap-8 font-space">
+      <a href="/index.html" class="text-base font-semibold hover:text-cyan-500 transition-all duration-300">Home</a>
+      <a href="/portofolio.html" class="text-base font-semibold hover:text-cyan-500 transition-all duration-300">Portofolio</a>
+      <a href="/about.html" class="text-base font-semibold hover:text-cyan-500 transition-all duration-300">About</a>
+    </div>
+
+    <button class="hidden md:block px-6 py-2 text-white rounded-lg bg-gradient-to-l from-indigo-800 to-cyan-500 cursor-pointer hover:shadow-lg transition-all duration-300">
+      <a href="./contact.html" class="font-medium font-space text-base">Contact</a> 
+    </button>
+
+    <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 z-50">
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+      <span class="w-6 h-0.5 bg-white"></span>
+    </button>
+  </nav>
+
+<div id="menu" class="fixed inset-0 hidden bg-black bg-opacity-50 z-40">
+  <div class="fixed top-0 right-0 h-full w-64 bg-[#0a1128] transform translate-x-full transition-transform duration-300 flex flex-col">
+    <button id="close-btn" class="absolute top-4 right-4 text-white">X</button>
+    
+    <nav class="flex flex-col flex-1 justify-between pt-20 pb-6 px-6 text-white font-semibold font-space">
+      <div class="flex flex-col gap-6">
+        <a href="/index.html" class="hover:text-cyan-500 transition-all duration-300">Home</a>
+        <a href="/portofolio.html" class="hover:text-cyan-500 transition-all duration-300">Portofolio</a>
+        <a href="/about.html" class="hover:text-cyan-500 transition-all duration-300">About</a>
+      </div>
+      
+      <button class="px-6 py-2 text-white rounded-lg bg-gradient-to-r from-indigo-800 to-cyan-500">
+      <a href="./contact.html" class="font-medium font-space text-base">Contact</a> 
+      </button>
+    </nav>
+  </div>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between relative w-full h-screen hero-section md:pl-20 pt-24 md:pt-0">
+  
+  <img 
+    src="/Indo.png" 
+    alt="Background Indo" 
+    class="absolute top-0 right-0 object-contain w-auto h-auto z-0 "/>
+
+  <div class="absolute inset-0"></div>
+
+  <div class="relative z-10 flex flex-col justify-center h-full px-4 md:w-1/2">
+    <h2 class="font-bold font-space text-white text-3xl sm:text-4xl md:text-6xl leading-snug md:leading-tight">
+      Build Modern <br class="hidden sm:block"> 
+      Digital Products <br class="hidden sm:block">
+      with <span class="text-cyan-500">Tekno Nusa</span>
+    </h2>
+    
+    <p class="text-white font-medium font-space pt-4 sm:pt-6 text-sm sm:text-base md:text-lg max-w-xl">
+      We help Indonesian businesses grow faster with reliable websites 
+      <br class="hidden md:block">
+      and mobile applications
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 pt-8 sm:pt-10">
+      <button class="bg-gradient-to-l from-indigo-800 to-cyan-500 text-white px-6 sm:px-8 md:px-10 py-2 md:py-3 rounded-lg font-semibold cursor-pointer hover:opacity-90 transition">
+        Let's Talk
+      </button>
+      <button class="bg-transparent border-2 border-cyan-400 text-white px-6 sm:px-8 md:px-10 py-2 md:py-3 rounded-lg font-semibold cursor-pointer hover:bg-linear-to-l from-indigo-500 to-cyan-500 transition-all duration-200 ">
+        View Portfolio
+      </button>
+    </div>
+  </div>
+
+  <div class="relative flex items-center justify-center h-96 lg:h-[500px] md:w-1/2 mt-12 md:mt-0">
+    <img 
+      src="https://placehold.co/360x240/png" 
+      alt="About Image 1"
+      class="absolute top-8 right-0 md:right-14 w-72 md:w-80 h-48 md:h-60 object-cover rounded-xl shadow-2xl z-20">
+    <img 
+      src="https://placehold.co/360x240/png" 
+      alt="About Image 2"
+      class="absolute bottom-8 left-0 md:left-8 w-72 md:w-80 h-48 md:h-60 object-cover rounded-xl shadow-2xl z-10">
+  </div>
+</div>
+
+  <div class="py-12 md:py-0.5">
+    <div class="container mx-auto px-6 md:px-20">
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14">
+        <img src="equinix.png" alt="Equinix"
+          class="w-28 md:w-36 h-14 md:h-16 object-contain hover:scale-110 transition-transform duration-300 opacity-70 hover:opacity-100">
+        <img src="lummesa.png" alt="Lummesa"
+          class="w-28 md:w-36 h-14 md:h-16 object-contain hover:scale-110 transition-transform duration-300 opacity-70 hover:opacity-100">
+        <img src="novadex.png" alt="Novadex"
+          class="w-28 md:w-36 h-14 md:h-16 object-contain hover:scale-110 transition-transform duration-300 opacity-70 hover:opacity-100">
+        <img src="quixana.png" alt="Quixana"
+          class="w-28 md:w-36 h-14 md:h-16 object-contain hover:scale-110 transition-transform duration-300 opacity-70 hover:opacity-100">
+        <img src="zenithia.png" alt="Zenithia"
+          class="w-28 md:w-36 h-14 md:h-16 object-contain hover:scale-110 transition-transform duration-300 opacity-70 hover:opacity-100">
+      </div>
+    </div>
+  </div>
+
+  <div class="py-16 md:py-25">
+    <div class="container mx-auto px-6 md:px-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <div class="space-y-6">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            Portfolio at <span class="text-sky-400"><br>Tekno Nusa</span>
+          </h1>
+          <p class="text-[#DDDDDD] text-lg lg:text-xl font-medium leading-relaxed max-w-xl">
+            A collection of Tekno Nusa's best works, reflecting <br class="hidden md:block">our journey of creativity, innovation, and modern <br class="hidden md:block">digital solutions.
+          </p>
+        </div>
+
+        <div class="flex justify-center lg:justify-end">
+          <div class="w-80 md:w-96 h-64 md:h-80 bg-neutral-900 rounded-2xl transform skew-x-[-6deg] overflow-hidden border border-gray-700/50 hover:skew-x-[-3deg] transition-transform duration-500">
+            <img src="https://image.idntimes.com/post/20240325/whatsapp-image-2024-03-26-at-123214-am-770cbc2889bb4c14bf5042be7b505d5d-efab8135144ace2c99bbee57fe71840e.jpeg?tr=w-1200,f-webp,q-75&width=1200&format=webp&quality=75" alt="Portfolio Preview" class="w-full h-full object-cover transform skew-x-[6deg] scale-110">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="py-20 px-4">
+      <h2 class="text-4xl font-bold text-white text-center font-space mb-4">Portfolio</h2>
+      <p class="text-gray-400 text-center font-space mb-12">Discover our latest projects and creative works</p>
+
+      <div class="flex justify-center gap-4 pt-10 font-space flex-wrap mb-16">
+        <button class="filter-btn bg-gradient-to-r from-indigo-500 to-cyan-500 px-6 py-3 rounded-full font-medium text-white shadow-lg hover:shadow-xl transition-all duration-300 active" data-filter="all">
+          All Projects
+        </button>
+        <button class="filter-btn bg-transparent border-2 border-cyan-500 text-cyan-500 px-6 py-3 rounded-full font-medium cursor-pointer hover:bg-cyan-500 hover:text-white transition-all duration-300" data-filter="mobile">
+          Mobile App
+        </button>
+        <button class="filter-btn bg-transparent border-2 border-cyan-500 text-cyan-500 px-6 py-3 rounded-full font-medium cursor-pointer hover:bg-cyan-500 hover:text-white transition-all duration-300" data-filter="website">
+          Website
+        </button>
+        <button class="filter-btn bg-transparent border-2 border-cyan-500 text-cyan-500 px-6 py-3 rounded-full font-medium cursor-pointer hover:bg-cyan-500 hover:text-white transition-all duration-300" data-filter="uiux">
+          UI/UX
+        </button>
+        <button class="filter-btn bg-transparent border-2 border-cyan-500 text-cyan-500 px-6 py-3 rounded-full font-medium cursor-pointer hover:bg-cyan-500 hover:text-white transition-all duration-300" data-filter="branding">
+          Branding
+        </button>
+        <button class="filter-btn bg-transparent border-2 border-cyan-500 text-cyan-500 px-6 py-3 rounded-full font-medium cursor-pointer hover:bg-cyan-500 hover:text-white transition-all duration-300" data-filter="other">
+          Other
+        </button>
+      </div>
+
+      <div id="portfolioGrid" class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="mobile">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop&crop=center" 
+                   alt="Mobile App Project" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">E-Commerce Mobile App</h3>
+                <p class="text-gray-300 text-sm">Modern mobile shopping experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="website">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop&crop=center" 
+                   alt="Website Project" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Corporate Website</h3>
+                <p class="text-gray-300 text-sm">Professional business website</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="uiux">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=300&fit=crop&crop=center" 
+                   alt="UI/UX Project" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Dashboard Design</h3>
+                <p class="text-gray-300 text-sm">Clean and modern interface</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="branding">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?w=400&h=300&fit=crop&crop=center" 
+                   alt="Branding Project" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Brand Identity</h3>
+                <p class="text-gray-300 text-sm">Complete branding solution</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="website">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop&crop=center" 
+                   alt="Web Development" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Portfolio Website</h3>
+                <p class="text-gray-300 text-sm">Creative portfolio showcase</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="other">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop&crop=center" 
+                   alt="Data Visualization" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Data Visualization</h3>
+                <p class="text-gray-300 text-sm">Interactive charts and graphs</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="mobile">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=400&h=300&fit=crop&crop=center" 
+                   alt="Food App" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Food Delivery App</h3>
+                <p class="text-gray-300 text-sm">Seamless food ordering experience</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="uiux">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=400&h=300&fit=crop&crop=center" 
+                   alt="Banking App" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Banking App UI</h3>
+                <p class="text-gray-300 text-sm">Secure and user-friendly design</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-card relative bg-neutral-800 rounded-2xl overflow-hidden group shadow-lg" data-category="branding">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?w=400&h=300&fit=crop&crop=center" 
+                   alt="Logo Design" 
+                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+            </div>
+            
+            <div class="card-overlay absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <button class="love-btn absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30" onclick="toggleLove(this)">
+                <i class="far fa-heart text-lg"></i>
+              </button>
+              
+              <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 class="text-white font-bold text-lg mb-2">Logo Design</h3>
+                <p class="text-gray-300 text-sm">Creative brand identity</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center items-center"> 
+      <button class="bg-gradient-to-r from-blue-400 to-purple-600 text-white font-bold py-3 px-10 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105 transform">
+        Show More
+      </button>
+    </div>
+  </div>
+
+  <footer class="bg-zinc-900 py-12">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+        <div>
+          <h3 class="font-bold text-white mb-3 font-space text-xl">Tekno Nusa</h3>
+          <p class="text-gray-400 mb-4 font-medium font-space text-base">We help your business thrive with the latest technologies.</p>
+          <div class="flex gap-4 text-cyan-500">
+            <i class="fa-brands fa-facebook text-2xl cursor-pointer bg-gray-800 px-2 py-2 rounded-full transition-all hover:scale-105 duration-150"></i>
+            <i class="fa-brands fa-twitter text-2xl cursor-pointer bg-gray-800 px-2 py-2 rounded-full transition-all hover:scale-105 duration-150"></i>
+            <i class="fa-brands fa-instagram text-2xl cursor-pointer bg-gray-800 px-2 py-2 rounded-full transition-all hover:scale-105 duration-150"></i>
+            <i class="fa-brands fa-whatsapp text-2xl cursor-pointer bg-gray-800 px-2 py-2 rounded-full transition-all hover:scale-105 duration-150"></i>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-3 text-lg font-space">Products</h4>
+          <ul class="text-gray-400 space-y-2 font-medium font-space text-base">
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Mutual Reports</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Blockchain</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Auto-Backup</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Auto-Scaling</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Load-Balancing</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-3 text-lg font-space">Resources</h4>
+          <ul class="text-gray-400 space-y-2 font-medium font-space text-base">
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Support 24/7</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Help Instructions</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Blogs & Tips</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">FAQ</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white mb-3 text-lg font-space">Company</h4>
+          <ul class="text-gray-400 space-y-2 font-medium font-space text-base" >
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Privacy Policy</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Terms & Conditions</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Join With Us</li>
+            <li class="hover:text-cyan-500 transition-all duration-300 cursor-pointer">Our Statistics</li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center text-gray-500 text-sm mt-10">
+        © 2025 Tekno Nusa. All rights reserved. Designed by <span class="text-cyan-500">Dellyn, Jakarta</span>.
+      </div>
+    </footer>
+
+  <script>
+    function toggleLove(button) {
+      const icon = button.querySelector('i');
+      const isLoved = button.classList.contains('loved');
+      
+      if (isLoved) {
+        button.classList.remove('loved');
+        icon.className = 'far fa-heart text-lg';
+        button.style.color = 'white';
+      } else {
+        button.classList.add('loved');
+        icon.className = 'fas fa-heart text-lg';
+        button.style.color = '#ef4444';
+        
+        button.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+          button.style.transform = 'scale(1)';
+        }, 200);
+      }
+    }
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.remove('bg-gradient-to-r', 'from-indigo-500', 'to-cyan-500', 'text-white');
+          btn.classList.add('bg-transparent', 'border-2', 'border-cyan-500', 'text-cyan-500');
+        });
+        
+        button.classList.add('active');
+        button.classList.remove('bg-transparent', 'border-2', 'border-cyan-500', 'text-cyan-500');
+        button.classList.add('bg-gradient-to-r', 'from-indigo-500', 'to-cyan-500', 'text-white');
+        
+        portfolioItems.forEach(item => {
+          const category = item.getAttribute('data-category');
+          
+          if (filter === 'all' || category === filter) {
+            item.style.display = 'block';
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+              item.style.opacity = '1';
+              item.style.transform = 'translateY(0)';
+            }, 100);
+          } else {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+              item.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+
+    portfolioItems.forEach(item => {
+      item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+    });
+  </script>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
